@@ -12,7 +12,6 @@ app.use("/api/contacts", contactsRouter);
 app.use((req, res, next) => {
     next(new ApiError(404, "Resource not found"));
 });
-
 // Middleware xử lý lỗi
 app.use((err, req, res, next) => {
     return res.status(err.statusCode || 500).json({
